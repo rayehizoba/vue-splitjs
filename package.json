@@ -1,0 +1,47 @@
+{
+  "name": "vue-splitjs",
+  "version": "0.0.1",
+  "description": "tiny unopinionated utility for resizeable split views, based on split.js",
+  "main": "./dist/vue-splitjs.min.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack-dev-server --content-base ./dev --env=webpack.dev --open --hot",
+    "dist": "webpack --env=webpack.dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ramoonstudio/vue-splitjs.git"
+  },
+  "keywords": [
+    "css",
+    "split",
+    "flexbox",
+    "tiny",
+    "split-layout",
+    "vue"
+  ],
+  "author": "ramoon studio",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ramoonstudio/vue-splitjs/issues"
+  },
+  "homepage": "https://github.com/ramoonstudio/vue-splitjs#readme",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-es2015": "^6.24.1",
+    "css-loader": "^0.28.7",
+    "vue": "^2.5.11",
+    "vue-loader": "^13.6.0",
+    "vue-template-compiler": "^2.5.11",
+    "webpack": "^3.10.0",
+    "webpack-dev-server": "^2.9.7"
+  },
+  "dependencies": {
+    "split.js": "^1.3.5"
+  },
+  "files": [
+    "dist",
+    "src"
+  ]
+}
