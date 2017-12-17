@@ -2,3 +2,5 @@
 - update component to make it very customizable
 - test on major browsers and various apps
 - update github page
+- write medium article about publishing a vue component
+  (https://vuetiful.wordpress.com/2017/05/13/publishing-components-in-vue-js/)
