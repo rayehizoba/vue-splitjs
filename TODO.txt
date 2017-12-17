@@ -1,0 +1,3 @@
+- update README.md
+- update component to make it very customizable
+- test on major browsers and various apps
