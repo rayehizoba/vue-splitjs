@@ -19,12 +19,7 @@ Or if you want to use it directly in the browser add
 to your scripts.
 
 ## How to use
-You can import and register component globally
-```javascript
-import VueSplit from 'vue-splitjs'
-Vue.use(VueSplit)
-```
-or from a component
+Import and register VueSplit component
 ```javascript
 // MyComponent.vue
 import VueSplit from 'vue-splitjs'
