@@ -6,5 +6,8 @@
   (https://vuetiful.wordpress.com/2017/05/13/publishing-components-in-vue-js/)
 
 - add localstorage persistence to save state
+
+
+- update package version
+- npm run dist
 - push to npm (npm publish)
-- update version
