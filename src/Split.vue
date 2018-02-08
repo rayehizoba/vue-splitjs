@@ -1,11 +1,6 @@
 <template lang="html">
   <div class="split-container">
-    <div class="split" :id="el1">
-      <slot name="top-pane"></slot>
-    </div>
-    <div class="split" :id="el2">
-      <slot name="bottom-pane"></slot>
-    </div>
+    <slot></slot>
   </div>
 </template>
  
@@ -13,32 +8,21 @@
 import Split from 'split.js'
 
 export default {
-  data() {
-    let el1 = this.randStr()
-    let el2 = this.randStr()
-    return {
-      el1: el1,
-      el2: el2,
-    }
-  },
-
-  methods: {
-    randStr () {
-      let text = ''
-      let possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'
-
-      for (let i = 0; i < 5; i++) {
-        text += possible.charAt(Math.floor(Math.random() * possible.length))
+  props: {
+    elements: {
+      type: Array,
+      validator(value) {
+        // validate that prop is an array of strings
+        return value.every(i => typeof i === "string")
       }
-
-      return text
     }
   },
 
-  mounted() {
-    Split([`#${this.el1}`, `#${this.el2}`], {
+  mounted () {
+    // init
+    Split(this.elements, {
       direction: 'vertical'
-    });
+    })
   }
 }
 </script>

@@ -1,3 +1,3 @@
-import VueSplitjs from './Split.vue'
+import VueSplit from './Split.vue'
 
-export default VueSplitjs
+export default VueSplit
