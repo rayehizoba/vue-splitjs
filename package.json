@@ -12,7 +12,8 @@
   "scripts": {
     "test": "mocha-webpack --webpack-config build/webpack.test.config.js test --recursive --require test/.setup",
     "dev": "webpack-dev-server --content-base ./dev --env=webpack.dev --open --hot",
-    "dist": "webpack --env=webpack.dist"
+    "dist": "webpack --env=webpack.dist",
+    "watch": "npm-watch"
   },
   "repository": {
     "type": "git",
