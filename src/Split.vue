@@ -1,6 +1,6 @@
 <template lang="html">
   <div class="split-container">
-    <slot></slot>
+    <!--slot></slot-->
   </div>
 </template>
  
@@ -19,10 +19,9 @@ export default {
   },
 
   mounted () {
-    // init
-    Split(this.elements, {
-      direction: 'vertical'
-    })
+    // Split(this.elements, {
+    //   direction: 'vertical'
+    // })
   }
 }
 </script>
