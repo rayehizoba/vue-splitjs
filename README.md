@@ -4,15 +4,12 @@
 </p>
 
 # vue-splitjs
----
 tiny unopinionated utility for resizeable split views, based on [split.js](https://github.com/nathancahill/Split.js)
 
 ## Compatibility
----
 Compatible with Vue.js 2.x
 
 ## Install
----
 `npm install vue-splitjs --save`
 
 Or if you want to use it directly in the browser add
@@ -24,7 +21,6 @@ to your scripts
 ### Browser
 
 ## How to use
----
 You can import and register component globally
 ```javascript
 import VueSplit from 'vue-splitjs'
