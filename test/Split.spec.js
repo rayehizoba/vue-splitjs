@@ -8,11 +8,9 @@ describe('Split.vue', () => {
     expect(wrapper.is('.split-container')).to.equal(true)
   })
 
-  it('renders correctly with prop values', () => {
+  it('has an elements prop', () => {
     const elements = ['#id1', '#id2']
     const wrapper = mount(Split, { propsData: { elements } })
-    elements.forEach(element => {
-      expect(wrapper.contains(element)).to.equal(true)
-    })
+    expect(wrapper.getProp('elements')).to.equal(elements)
   })
 })
