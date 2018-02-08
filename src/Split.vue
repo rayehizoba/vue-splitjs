@@ -1,5 +1,7 @@
 <template lang="html">
-  <div class="split-container">
+  <div class="split-container"
+    :class="{'split-container--horizontal': direction === 'horizontal'}"
+  >
     <slot></slot>
   </div>
 </template>
@@ -52,7 +54,7 @@ export default {
     },
 
     minSize: {
-      // Minimum size of each element.
+      // Minimum size of each element in pixels.
       type: [Number, Array],
       default: 100
     },
@@ -78,21 +80,29 @@ export default {
 
   mounted () {
     Split(this.elements, {
-      direction: 'vertical'
+      direction: this.direction,
+      sizes: this.sizes,
+      minSize: this.minSize,
+      gutterSize: this.gutterSize,
+      snapOffset: this.snapOffset,
+      cursor: this.cursor,
+      onDrag: this.onDrag,
+      onDragStart: this.onDragStart,
+      onDragEnd: this.onDragEnd
     })
   },
 
   methods: {
     onDrag() {
-      this.$emit('drag')
+      this.$emit('onDrag')
     },
 
     onDragEnd() {
-      this.$emit('dragEnd')
+      this.$emit('onDragEnd')
     },
 
     onDragStart() {
-      this.$emit('dragStart')
+      this.$emit('onDragStart')
     }
   }
 }
@@ -101,6 +111,10 @@ export default {
 <style>
 .split-container {
   height: 100%;
+}
+
+.split-container--horizontal {
+  display: flex;
 }
 
 .gutter {
@@ -115,6 +129,7 @@ export default {
 }
 
 .gutter.gutter-horizontal {
+  float: left;
   cursor: ew-resize;
   background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAeCAYAAADkftS9AAAAIklEQVQoU2M4c+bMfxAGAgYYmwGrIIiDjrELjpo5aiZeMwF+yNnOs5KSvgAAAABJRU5ErkJggg==')
 }
