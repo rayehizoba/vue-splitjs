@@ -6,7 +6,7 @@
 # vue-splitjs
 tiny unopinionated utility for resizeable split views, based on [split.js](https://github.com/nathancahill/Split.js)
 
-## Compatibility
+### Compatibility
 Compatible with Vue.js 2.x
 
 ## Install
@@ -16,9 +16,7 @@ Or if you want to use it directly in the browser add
 ```html
 <script src="https://unpkg.com/vue-splitjs/dist/vue-splitjs.min.js"></script>
 ```
-to your scripts
-
-### Browser
+to your scripts.
 
 ## How to use
 You can import and register component globally
