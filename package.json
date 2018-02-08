@@ -1,6 +1,6 @@
 {
   "name": "vue-splitjs",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "tiny unopinionated utility for resizeable split views, based on split.js",
   "main": "./dist/vue-splitjs.min.js",
   "watch": {
