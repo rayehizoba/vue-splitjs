@@ -10,11 +10,69 @@ import Split from 'split.js'
 export default {
   props: {
     elements: {
+      // Array of target split element ids
       type: Array,
+      required: true,
       validator(value) {
-        // validate that prop is an array of strings
-        return value.every(i => typeof i === "string")
+        // must be array of strings
+        const isValid = value.every(i => typeof i === "string")
+        if (!isValid) {
+          console.error(`VueSplitJs: Invalid elements - "${value}". Must be array of strings`)
+        }
+        return isValid
       }
+    },
+
+    direction: {
+      // Direction to split: horizontal or vertical.
+      type: String,
+      default: 'horizontal',
+      validator(value) {
+        let allowedValues = ['horizontal', 'vertical']
+        const isValid = allowedValues.includes(value)
+        if (!isValid) {
+          console.error(`VueSplitJs: Invalid direction - "${value}". Possible values are "horizontal" or "vertical"`)
+        }
+        return isValid
+      }
+    },
+
+    sizes: {
+      // Initial sizes of each element in percents.
+      type: Array,
+      default: null,
+      validator(value) {
+        // must be array of numbers
+        const isValid = value.every(i => typeof i === "number")
+        if (!isValid) {
+          console.error(`VueSplitJs: Invalid sizes - "${value}". Must be array of numbers`)
+        }
+        return isValid
+      }
+    },
+
+    minSize: {
+      // Minimum size of each element.
+      type: [Number, Array],
+      default: 100
+    },
+
+    gutterSize: {
+      // Gutter size in pixels.
+      type: Number,
+      default: 10
+    },
+
+    snapOffset: {
+      // Snap to minimum size offset.
+      type: Number,
+      default: 30
+    },
+
+    cursor: {
+      // Cursor to display while dragging.
+      type: String,
+      default: 'grabbing'
     }
   },
 
@@ -22,6 +80,20 @@ export default {
     Split(this.elements, {
       direction: 'vertical'
     })
+  },
+
+  methods: {
+    onDrag() {
+      this.$emit('drag')
+    },
+
+    onDragEnd() {
+      this.$emit('dragEnd')
+    },
+
+    onDragStart() {
+      this.$emit('dragStart')
+    }
   }
 }
 </script>
