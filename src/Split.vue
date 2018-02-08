@@ -113,6 +113,11 @@ export default {
   height: 100%;
 }
 
+.split-container > * {
+  position: relative;
+  overflow-y: hidden;
+}
+
 .split-container--horizontal {
   display: flex;
 }
