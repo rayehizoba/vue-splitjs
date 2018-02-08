@@ -3,6 +3,12 @@
   "version": "0.0.1",
   "description": "tiny unopinionated utility for resizeable split views, based on split.js",
   "main": "./dist/vue-splitjs.min.js",
+  "watch": {
+    "test": {
+      "patterns": ["src", "test"],
+      "extensions": "js,vue"
+    }
+  },
   "scripts": {
     "test": "mocha-webpack --webpack-config build/webpack.test.config.js test --recursive --require test/.setup",
     "dev": "webpack-dev-server --content-base ./dev --env=webpack.dev --open --hot",
@@ -44,6 +50,7 @@
     "webpack-dev-server": "^2.9.7"
   },
   "dependencies": {
+    "npm-watch": "^0.3.0",
     "split.js": "^1.3.5"
   },
   "files": [
