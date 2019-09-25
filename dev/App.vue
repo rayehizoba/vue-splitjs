@@ -9,6 +9,9 @@
       :min-size="100"
       :gutter-size="10"
       :snap-offset="50"
+      @onDragStart="onDragStart"
+      @onDrag="onDrag"
+      @onDragEnd="onDragEnd"
     >
       <div id="slotOne">
         <h2>hello world</h2>
@@ -19,6 +22,9 @@
             '#foo',
             '#bar'
           ]"
+          @onDragStart="onDragStart"
+          @onDrag="onDrag"
+          @onDragEnd="onDragEnd"
         >
           <div id="foo">
             <h2>foo</h2>
@@ -33,11 +39,22 @@
 </template>
  
 <script type="text/javascript">
-  import VueSplit from '../src/index.js'
-  
-  export default{
-    components:{
-      VueSplit
+import VueSplit from '../src/index.js';
+
+export default {
+  components: {
+    VueSplit
+  },
+  methods: {
+    onDragStart(arg) {
+      console.log('onDragStart', arg);
+    },
+    onDrag(arg) {
+      console.log('onDrag', arg);
+    },
+    onDragEnd(arg) {
+      console.log('onDragEnd', arg);
     }
   }
+};
 </script>
