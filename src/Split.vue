@@ -78,8 +78,14 @@ export default {
     }
   },
 
+  data() {
+    return {
+      instance: null
+    }
+  },
+
   mounted () {
-    Split(this.elements, {
+    this.instance = Split(this.elements, {
       direction: this.direction,
       sizes: this.sizes,
       minSize: this.minSize,
@@ -94,15 +100,15 @@ export default {
 
   methods: {
     onDrag() {
-      this.$emit('onDrag')
+      this.$emit('onDrag', this.instance.getSizes())
     },
 
     onDragEnd() {
-      this.$emit('onDragEnd')
+      this.$emit('onDragEnd', this.instance.getSizes())
     },
 
     onDragStart() {
-      this.$emit('onDragStart')
+      this.$emit('onDragStart', this.instance.getSizes())
     }
   }
 }
